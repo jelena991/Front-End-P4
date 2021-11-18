@@ -60,7 +60,7 @@
               name="reserve"
               action="index.html"
               method="get"
-              onsubmit="return validate();"
+              onsubmit="return validate(event)"
             >
               <div
                 class="formData">
@@ -70,8 +70,10 @@
                   type="text"
                   id="first"
                   name="first"
-                  minlength="2"
-                /><br>
+                  required
+                />
+                <small style="display: none" id="error-first" class="error-message">Please enter 2+ characters for name field.</small>
+                <br>
               </div>
               <div
                 class="formData">
@@ -81,17 +83,22 @@
                   type="text"
                   id="last"
                   name="last"
-                /><br>
+                  required
+                />
+                <small style="display: none" id="error-last" class="error-message">Please enter 2+ characters for last name field.</small>
+                <br>
               </div>
               <div
                 class="formData">
                 <label for="email">Email</label><br>
                 <input
                   class="text-control"
-                  type="email"
+                  type="text"
                   id="email"
                   name="email"
+                  required
                 /><br>
+                <small style="display: none" id="error-email" class="error-message">Please enter a valid email address</small>
               </div>
               <div
                 class="formData">
@@ -101,12 +108,14 @@
                   type="date"
                   id="birthdate"
                   name="birthdate"
+                  required
                 /><br>
+                <small style="display: none" id="error-date" class="error-message">You must enter your date of birth</small>
               </div>
               <div
                 class="formData">
                 <label for="quantity">How many tournaments have you attended? </label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required>
               </div>
               <p class="text-label">Which location?</p>
               <div
@@ -117,6 +126,7 @@
                   id="location1"
                   name="location"
                   value="New York"
+
                 />
                 <label class="checkbox-label" for="location1">
                   <span class="checkbox-icon"></span>
@@ -172,11 +182,14 @@
                   id="location6"
                   name="location"
                   value="Portland"
+                  
                 />
                 <label class="checkbox-label" for="location6">
                   <span class="checkbox-icon"></span>
                   Portland</label
                 >
+                  <br>
+                <small style="display: none" id="error-location" class="error-message">You must select a location</small>
               </div>
 
               <div
@@ -192,6 +205,8 @@
                   I have read and I agree to GameOn's terms and conditions.
                 </label>
                 <br>
+                <small style="display: none" id="error-checkbox" class="error-message">You must check to agree to terms and conditions.</small>
+                <br>
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
@@ -205,6 +220,7 @@
                 class="button"
                 value="Go"
               />
+              <small style="display: none" id="success">Thank you for submiting your registration details!</small>
             </form>
           </div>
         </div>
