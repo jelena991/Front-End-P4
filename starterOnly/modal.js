@@ -28,9 +28,13 @@ function closeForm() {
   modalbg.style.display = "none";
   //clear form from previous data
   document.querySelector("form").reset();
+  // reset form to previous state
+  form.style.display = 'block';
+  submitBtn.style.display = 'block';
+  successMsg.style.display = 'none';
+  successCloseBtn.style.display = 'none';
   //clear error msg 
-  const errors = document.getElementsByClassName("error-message");
- // errors.style.display = "none";
+  errors.style.display = "none";
 }
 
 // submit modal form
@@ -38,7 +42,9 @@ function closeForm() {
   const forms = document.querySelectorAll('.needs-validation');
   const successMsg = document.getElementById('success-message');
   const submitBtn = document.getElementById('btn-submit');
-  const successCloseBtn = document.getElementById('btn-close')
+  const successCloseBtn = document.getElementById('btn-close');
+  const errors = document.querySelectorAll(".error-message");
+
 
 
   //Loop over the form and prevent submission

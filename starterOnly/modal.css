@@ -33,6 +33,7 @@ img {
 .topnav {
   overflow: hidden;
   margin: 3.5%;
+  
 }
 .header-logo {
     float: left;
@@ -43,7 +44,7 @@ img {
 .topnav a {
   float: left;
   display: block;
-  color: #000000;
+  color: black;
   text-align: center;
   padding: 12px 12px;
   margin: 5px;
@@ -52,11 +53,10 @@ img {
   font-family: Roboto, sans-serif;
 }
 
-.topnav a:hover {
-  background-color: #ff0000;
-  color: #ffffff;
+/*.topnav a:hover {
+  color: black;
   border-radius: 15px;
-}
+}*/
 
 .topnav a.active {
   background-color: #ff0000;
@@ -66,6 +66,15 @@ img {
 
 .topnav .icon {
   display: none;
+  color: red;
+}
+
+@media screen and (max-width: 942px) {
+  .topnav a.icon  {display: none;}
+  .topnav a {
+    padding: 12px 8px;
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -73,6 +82,7 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
+    font-size: 30px;
   }
 }
 
@@ -97,7 +107,7 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
+    color: red;
   }
 } 
 
@@ -202,11 +212,11 @@ input {
 }
 /*VALIDATION*/
 .was-validated input:valid {
-  border: 2px solid green;
+  border: 1px solid green;
 }
 
 .was-validated input:invalid {
-  border: 2px solid red;
+  border: 1px solid red;
 }
 
 /*ERROR MESSAGE*/
@@ -236,16 +246,6 @@ input {
 #btn-close {
   display: none;
 }
-
-form:valid {
-  border: 3px solid yellow;
-}
-
-
-
-
-
-
 
 .text-control {
   margin: 0;
@@ -372,7 +372,7 @@ input[data-error]::after {
 .btn-signup {
   background: #fe142f;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
   border-radius: 7px;
   font-size: 1rem;
   padding: 12px 82px;
@@ -452,17 +452,17 @@ input[data-error]::after {
   font-size: 16px;
 }
 .hero-section {
-  min-height: 93vh;
+  min-height: 70vh;
   border-radius: 10px;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(14, 1fr);
   overflow: hidden;
   box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
   margin-bottom: 10px;
 }
 .hero-content {
   padding: 51px 67px;
-  grid-column: span 4;
+  grid-column: span 6;
   background: #232323;
   color: #fff;
   position: relative;
@@ -499,7 +499,7 @@ input[data-error]::after {
   font-size: 1.3rem;
   padding: 15px 23px;
   margin: 0;
-  margin-top: 59px;
+  margin-top: 100px;
 }
 .hero-img {
   grid-column: span 8;
@@ -542,7 +542,7 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     white-space: normal;
   }
   .hero-text {
