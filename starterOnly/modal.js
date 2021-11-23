@@ -30,14 +30,74 @@ function closeForm() {
   document.querySelector("form").reset();
   //clear error msg 
   const errors = document.getElementsByClassName("error-message");
-  errors.style.display = "none";
+ // errors.style.display = "none";
 }
 
 // submit modal form
 
-function validate (event) {
+  const forms = document.querySelectorAll('.needs-validation');
+  const successMsg = document.getElementById('success-message');
+  const submitBtn = document.getElementById('btn-submit');
+  const successCloseBtn = document.getElementById('btn-close')
+
+
+  //Loop over the form and prevent submission
+
+  for (let i = 0; i < forms.length; i++){
+    const form = forms[i];
+
+    form.addEventListener('submit', function(event){
+      console.log ('starting validation');
+      event.preventDefault();
+
+      if (!form.checkValidity()){
+        console.log ('form invalid')
+
+        event.stopPropagation();
+      } else {
+        //successMsg.classList.add('was-validated');
+
+        successMsg.style.display = 'flex';
+        successCloseBtn.style.display = 'block';
+        form.style.display = 'none';
+        submitBtn.style.display = 'none';
+        console.log('success message');
+
+        
+        
+      }
+
+      form.classList.add('was-validated');
+    });
+  }
+
+  function validate(event) {
+    const forms = document.querySelectorAll('.needs-validation');
+    const successMsg = document.querySelectorAll('.success-message');
+
+    console.log('FORMS ARE: ', forms);
+    const form = forms[0];
+
+    console.log ('starting validation');
+      event.preventDefault();
+
+      if (!form.checkValidity()){
+        console.log ('form invalid')
+
+        event.stopPropagation();
+        // If the form is invalid, submit it. The form won't actually submit;
+        // this will just cause the browser to display the native HTML5 error messages.
+      }
+
+      form.classList.add('was-validated');
+  }
+
+
+
   
-  //const formData = new FormData();
+
+  
+  /*//const formData = new FormData();
 
   let displaySuccess = true;
 
@@ -128,7 +188,7 @@ function validate (event) {
 
 
 
-/*function validate(form) {
+function validate(form) {
   const input = document.getElementById("first");
   
   

@@ -200,17 +200,52 @@ input {
   border: 0.8px solid #ccc;
   outline: none;
 }
-
-input:invalid {
-	border-color: red;
+/*VALIDATION*/
+.was-validated input:valid {
+  border: 2px solid green;
 }
 
+.was-validated input:invalid {
+  border: 2px solid red;
+}
 
+/*ERROR MESSAGE*/
 .error-message {
   font-size: 13px;
   font-weight: 100;
   color: red;
+  display: none;
 }
+
+.was-validated :invalid~.error-message{
+  display: block;
+}
+
+/*SUCCESS MESSAGE*/
+#success-message{
+  width: 100%;
+  padding: 40% 0px 60% 0px;
+  font-size: 36px;
+  line-height: 142.6%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#btn-close {
+  display: none;
+}
+
+form:valid {
+  border: 3px solid yellow;
+}
+
+
+
+
+
+
 
 .text-control {
   margin: 0;

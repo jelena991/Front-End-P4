@@ -55,13 +55,23 @@
       <div class="bground">
         <div class="content">
           <span class="close" onclick="closeForm()"></span>
+          
           <div class="modal-body">
+            
+            <h2 id="success-message">Thank you for submitting your registration details</h2>
+            
+         
+           
             <form
+              id="form"
               name="reserve"
               action="index.html"
               method="get"
-              onsubmit="return validate(event)"
+              class="needs-validation" novalidate
+             
             >
+
+             
               <div
                 class="formData">
                 <label for="first">First Name</label><br>
@@ -70,10 +80,11 @@
                   type="text"
                   id="first"
                   name="first"
+                  minlength="2"
                   required
                 />
-                <small style="display: none" id="error-first" class="error-message">Please enter 2+ characters for name field.</small>
-                <br>
+                <div class="error-message">Please enter 2+ characters for name field.</div>
+                
               </div>
               <div
                 class="formData">
@@ -83,10 +94,10 @@
                   type="text"
                   id="last"
                   name="last"
+                  minlength="2"
                   required
                 />
-                <small style="display: none" id="error-last" class="error-message">Please enter 2+ characters for last name field.</small>
-                <br>
+                <div class="error-message">Please enter 2+ characters for last name field.</div>    
               </div>
               <div
                 class="formData">
@@ -96,9 +107,11 @@
                   type="text"
                   id="email"
                   name="email"
+                  pattern=".+@.+\..+" 
                   required
-                /><br>
-                <small style="display: none" id="error-email" class="error-message">Please enter a valid email address</small>
+                />
+                
+                <div class="error-message">Please enter a valid email address</div>
               </div>
               <div
                 class="formData">
@@ -109,14 +122,15 @@
                   id="birthdate"
                   name="birthdate"
                   required
-                /><br>
-                <small style="display: none" id="error-date" class="error-message">You must enter your date of birth</small>
+                />
+                <div class="error-message">You must enter your date of birth</div>
               </div>
               <div
                 class="formData">
                 <label for="quantity">How many tournaments have you attended? </label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required>
-              </div>
+              <br>
+              <div class="error-message">Enter a number</div></div>
               <p class="text-label">Which location?</p>
               <div
                 class="formData">
@@ -126,6 +140,7 @@
                   id="location1"
                   name="location"
                   value="New York"
+                  required
 
                 />
                 <label class="checkbox-label" for="location1">
@@ -188,8 +203,9 @@
                   <span class="checkbox-icon"></span>
                   Portland</label
                 >
-                  <br>
-                <small style="display: none" id="error-location" class="error-message">You must select a location</small>
+                  
+                  <div class="error-message">You must select a location</div>
+
               </div>
 
               <div
@@ -199,29 +215,38 @@
                   type="checkbox"
                   id="checkbox1"
                   checked
+                  required
                 />
                 <label class="checkbox2-label" for="checkbox1" required>
                   <span class="checkbox-icon"></span>
                   I have read and I agree to GameOn's terms and conditions.
                 </label>
-                <br>
-                <small style="display: none" id="error-checkbox" class="error-message">You must check to agree to terms and conditions.</small>
-                <br>
+              
+                <div class="error-message">You must check to agree to terms and conditions.</div></div>
+              
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
                   Please sign me up to be notified about future events.
                 </label>
-                <br>
               </div>
+            
               <input
                 class="btn-submit"
+                id="btn-submit"
                 type="submit"
                 class="button"
                 value="Go"
               />
-              <small style="display: none" id="success">Thank you for submiting your registration details!</small>
+              <input
+              class="btn-submit"
+              id="btn-close"
+              type="submit"
+              class="button"
+              value="Close"
+              />
             </form>
+            
           </div>
         </div>
       </div>
