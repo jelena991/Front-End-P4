@@ -34,7 +34,7 @@ function closeForm() {
   successMsg.style.display = 'none';
   successCloseBtn.style.display = 'none';
   //clear error msg 
-  errors.style.display = "none";
+  form.classList.remove('was-validated');
 }
 
 // submit modal form
@@ -77,26 +77,26 @@ function closeForm() {
     });
   }
 
-  function validate(event) {
-    const forms = document.querySelectorAll('.needs-validation');
-    const successMsg = document.querySelectorAll('.success-message');
+  // function validate(event) {
+  //   const forms = document.querySelectorAll('.needs-validation');
+  //   const successMsg = document.querySelectorAll('.success-message');
 
-    console.log('FORMS ARE: ', forms);
-    const form = forms[0];
+  //   console.log('FORMS ARE: ', forms);
+  //   const form = forms[0];
 
-    console.log ('starting validation');
-      event.preventDefault();
+  //   console.log ('starting validation');
+  //     event.preventDefault();
 
-      if (!form.checkValidity()){
-        console.log ('form invalid')
+  //     if (!form.checkValidity()){
+  //       console.log ('form invalid')
 
-        event.stopPropagation();
-        // If the form is invalid, submit it. The form won't actually submit;
-        // this will just cause the browser to display the native HTML5 error messages.
-      }
+  //       event.stopPropagation();
+  //       // If the form is invalid, submit it. The form won't actually submit;
+  //       // this will just cause the browser to display the native HTML5 error messages.
+  //     }
 
-      form.classList.add('was-validated');
-  }
+  //     form.classList.add('was-validated');
+  // }
 
 
 
