@@ -33,13 +33,12 @@ img {
 .topnav {
   overflow: hidden;
   margin: 3.5%;
-  
 }
 .header-logo {
-    float: left;
+  float: left;
 }
 .main-navbar {
-    float: right;
+  float: right;
 }
 .topnav a {
   float: left;
@@ -70,29 +69,31 @@ img {
 }
 
 @media screen and (max-width: 942px) {
-  .topnav a.icon  {display: none;}
+  .topnav a.icon {
+    display: none;
+  }
   .topnav a {
     padding: 12px 8px;
     font-size: 16px;
   }
 }
 
-
-
 @media screen and (max-width: 768px) {
-  .topnav a {display: none;}
+  .topnav a {
+    display: none;
+  }
   .topnav a.icon {
     float: right;
     display: block;
     font-size: 30px;
-    
   }
-  .topnav.responsive {position: relative;}
+  .topnav.responsive {
+    position: relative;
+  }
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
     top: 0;
-    
   }
   .topnav.responsive a {
     float: left;
@@ -101,19 +102,19 @@ img {
   }
 }
 
-
-
- @media screen and (max-width: 540px) {
-.hero-headline {
-  font-size: 10px;
-}
-  .topnav a {display: none;}
+@media screen and (max-width: 540px) {
+  .hero-headline {
+    font-size: 10px;
+  }
+  .topnav a {
+    display: none;
+  }
   .topnav a.icon {
     float: right;
     display: block;
     color: red;
   }
-} 
+}
 
 main {
   font-size: 130%;
@@ -125,8 +126,6 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
-
 }
 
 .modal-btn {
@@ -231,12 +230,12 @@ input {
   display: none;
 }
 
-.was-validated :invalid~.error-message{
+.was-validated :invalid ~ .error-message {
   display: block;
 }
 
 /*SUCCESS MESSAGE*/
-#success-message{
+#success-message {
   width: 100%;
   padding: 40% 0px 60% 0px;
   font-size: 36px;
@@ -490,14 +489,12 @@ input[data-error]::after {
   font-size: 6rem;
   font-weight: normal;
   white-space: nowrap;
-  
 }
 .hero-text {
   width: 146%;
   font-weight: normal;
   margin-top: 57px;
   padding: 0;
- 
 }
 .btn-signup {
   outline: none;
@@ -580,4 +577,3 @@ footer {
     opacity: 1;
   }
 }
-
